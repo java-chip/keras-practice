@@ -8,10 +8,16 @@ Created on Wed Nov  7 03:41:54 2018
 import os, shutil
 
 # 元のデータセットを展開したディレクトリへのパス
-original_dataset_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\original_dataset"
+# path for windows
+#original_dataset_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\original_dataset"
+# path for linux
+original_dataset_dir = "/home/tsugaike3/matsuda/work/keras-practice/chapter5/dogcat/original_dataset"
 
 # より小さなデータセットを格納するディレクトリへのパス
-base_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\small_dataset"
+# path for windows
+#base_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\small_dataset"
+# path for linux
+base_dir = "/home/tsugaike3/matsuda/work/keras-practice/chapter5/dogcat/small_dataset"
 os.mkdir(base_dir)
 
 # 訓練データセット、検証データセット、テストデータセットを配置するディレクトリ
