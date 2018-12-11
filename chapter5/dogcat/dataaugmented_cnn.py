@@ -41,7 +41,11 @@ train_datagen = ImageDataGenerator(
 # 検証データは水増しすべきでないことに注意
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-base_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\small_dataset"
+# path for windows
+#base_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\small_dataset"
+# path for linux
+base_dir = "/home/tsugaike3/matsuda/work/keras-practice/chapter5/dogcat/small_dataset"
+
 train_dir = os.path.join(base_dir, 'train')
 
 train_generator = train_datagen.flow_from_directory(

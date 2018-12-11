@@ -5,6 +5,8 @@ Created on Wed Nov  7 18:30:13 2018
 @author: watanabelab
 """
 
+# データが少なくて過学習を起こすプログラム
+
 import os
 from keras import layers
 from keras import models
@@ -37,7 +39,12 @@ model.compile(loss='binary_crossentropy',
 train_datagen = ImageDataGenerator(rescale=1./255)
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-base_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\small_dataset"
+# path for windows
+#base_dir = "C:\\Users\\watanabelab\\work\\keras-practice\\chapter5\\dogcat\\small_dataset"
+
+# path for linux
+base_dir = "/home/tsugaike3/matsuda/work/keras-practice/chapter5/dogcat/small_dataset"
+
 train_dir = os.path.join(base_dir, 'train')
 train_generator = train_datagen.flow_from_directory(
         train_dir,
