@@ -5,6 +5,8 @@ Created on Wed Nov  7 22:02:09 2018
 @author: watanabelab
 """
 
+# ランダムに水増しされた画像の表示
+
 import os
 from keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt

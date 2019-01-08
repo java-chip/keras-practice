@@ -5,6 +5,8 @@ Created on Wed Nov  7 18:30:13 2018
 @author: watanabelab
 """
 
+# データ拡張とドロップ層を追加したCNNプログラム
+
 import os
 from keras import layers
 from keras import models

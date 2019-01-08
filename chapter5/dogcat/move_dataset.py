@@ -5,6 +5,8 @@ Created on Wed Nov  7 03:41:54 2018
 @author: watanabelab
 """
 
+# 画像をtrain, validation, testディレクトリにそれぞれコピーするプログラム
+
 import os, shutil
 
 # 元のデータセットを展開したディレクトリへのパス
