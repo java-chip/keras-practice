@@ -27,7 +27,6 @@ train_dir = os.path.join(base_dir, 'train')
 validation_dir = os.path.join(base_dir, 'validation')
 test_dir = os.path.join(base_dir, 'test')
 
-datagen = ImageDataGenerator(rescale = 1./255)
 batch_size = 20
 
 model = models.Sequential()
@@ -72,7 +71,7 @@ model.compile(loss='binary_crossentropy',
 
 history = model.fit_generator(train_generator,
                               steps_per_epoch=100,
-                              epochs=30,
+                              epochs=100,
                               validation_data=validation_generator,
                               validation_steps=50,
                               verbose=2)
