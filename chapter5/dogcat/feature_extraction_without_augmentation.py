@@ -6,6 +6,7 @@ Created on Tue Jan  8 19:23:51 2019
 @author: tsugaike3
 """
 
+# データ拡張を行わない特徴抽出
 # 学習済みの畳み込みベースを使って特徴量を抽出するプログラム
 
 import os
@@ -35,6 +36,8 @@ def extract_features(directory, sample_count):
     generator = datagen.flow_from_directory(directory, target_size=(150, 150),
                                             batch_size=batch_size,
                                             class_mode='binary')
+    # ラベルの確認
+    # generator.class_indices
     i = 0
     for inputs_batch, labels_batch in generator:
         features_batch = conv_base.predict(inputs_batch)
@@ -53,6 +56,7 @@ validation_features, validation_labels = extract_features(validation_dir,
                                                            1000)
 test_features, test_labels = extract_features(test_dir, 1000)
 
+# 全結合分類器に供給するために(samples, 8192)に平坦化しておく
 train_features = np.reshape(train_features, (2000, 4 * 4 * 512))
 validation_features = np.reshape(validation_features, (1000, 4 * 4 * 512))
 test_features = np.reshape(test_features, (1000, 4 * 4 * 512))
