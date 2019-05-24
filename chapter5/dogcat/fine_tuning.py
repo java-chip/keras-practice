@@ -96,7 +96,7 @@ def smooth_curve(points, factor = 0.8):
             previous = smoothed_points[-1]
             smoothed_points.append(previous * factor + point * (1 - factor))
         else:
-            smoothed_points.append(points)
+            smoothed_points.append(point)
     return smoothed_points
 
 # 正解率をプロット
@@ -121,7 +121,7 @@ test_generator = test_datagen.flow_from_directory(
         batch_size = 20,
         class_mode = 'binary')
 
-test_loss, test_acc = model.evaluate_generator(test_generator)
+test_loss, test_acc = model.evaluate_generator(test_generator, steps = 50)
 print('test acc: ', test_acc)
 
 
