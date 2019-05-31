@@ -67,7 +67,7 @@ def generate_pattern(layer_name, filter_index, size=150):
 #plt.imshow(generate_pattern('block3_conv1', 0))
 #plt.show()
 
-layers = ['block3_conv1']
+layers = ['block1_conv1', 'block2_conv1', 'block3_conv1', 'block4_conv1']
 for layer_name in layers:
     size = 64
     margin = 5
